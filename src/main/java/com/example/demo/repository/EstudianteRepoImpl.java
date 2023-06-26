@@ -13,13 +13,9 @@ import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
 
 @Repository
-
-//necesita la siguiente anotacion para la conexion con la baseDatos
 @Transactional
 public class EstudianteRepoImpl implements EstudianteRepo {
-	// public static List<Estudiante> baseDatos = new ArrayList<>();
 
-	// permite la interaccion con la base de datos
 	@PersistenceContext
 	private EntityManager entityManager;
 
@@ -63,7 +59,6 @@ public class EstudianteRepoImpl implements EstudianteRepo {
 
 	@Override
 	public List<Estudiante> seleccionarListaPorApellido(String apellido) {
-		// TODO Auto-generated method stub
 
 		Query myQuery = this.entityManager
 				.createQuery("SELECT e FROM Estudiante  e WHERE e.apellido = :datoApellido AND e.nombre=:datoNombre ");

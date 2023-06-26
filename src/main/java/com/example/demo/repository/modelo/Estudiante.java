@@ -8,19 +8,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
-@Table(name = "estudiante")
 @Entity
+@Table(name = "estudiante")
 public class Estudiante {
 
-	// PRIMARY KEY ID(hace relacion con la base de datos )
-	// siempre al inicio
-	// mapeo especifico dentro de mi primaryKeys
-// generador no debe ser seteado
-	@GeneratedValue(generator = "seq_estudiante", strategy = GenerationType.SEQUENCE)
-	// nombre generador secuencia nombre incremento
-	@SequenceGenerator(name = "seq_estudiante", sequenceName = "seq_estudiante", allocationSize = 1)
-
 	@Id
+	@GeneratedValue(generator = "seq_estudiante", strategy = GenerationType.SEQUENCE)
+	@SequenceGenerator(name = "seq_estudiante", sequenceName = "seq_estudiante", allocationSize = 1)
 	@Column(name = "estu_id")
 	private Integer id;
 
